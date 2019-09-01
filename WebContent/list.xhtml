@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+  xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+  xmlns:h="http://xmlns.jcp.org/jsf/html"
+  xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+  <title>Feedback Reporter</title>
+  <h:outputStylesheet library="css" name="style.css" />
+</h:head>
+<h:body>
+  <h1>Feedback List</h1>
+
+  <h:form>
+ 
+    <table>
+      <tr><th>Feedback</th><th>Action</th></tr>
+ 	
+ 	<!-- For each feedback in a row display two columns: -->
+ 	<!-- in the first column show the feedback timestamp subject and meesage -->
+ 	<!-- in the second column show the delete button  -->  
+
+    <ui:repeat var="q" value="#{feedbackBackingBean.getFeedbackList()}">
+        <tr>
+          <td>
+          		#{q.toString()}
+          </td>
+          <td>
+				<h:commandButton value="delete" action="#{feedbackBackingBean.deleteFeedback(q)}"></h:commandButton>
+
+          
+          
+          </td>
+         </tr>
+       </ui:repeat>
+
+
+        
+    </table>
+ 
+    <!-- Here goes the counter of the feedbacks in the list -->
+    
+    
+    
+  </h:form>
+  
+</h:body>
+</html>

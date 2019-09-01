@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+  xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+  xmlns:h="http://xmlns.jcp.org/jsf/html"
+  xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+  <title>Feedback Reporter</title>
+  <h:outputStylesheet library="css" name="style.css" />
+</h:head>
+<h:body>
+  <h1>Feedback Reporter</h1>
+  
+  <h:form id="formulario">
+    <table>
+      <tr>
+        <th>Subject:</th>
+        <td>
+        <!--  Here goes the input field for the subject  -->
+        <h:inputTextarea id="subjecttext" value="#{feedbackBackingBean.newFeedback.subject}"></h:inputTextarea>
+          
+         
+         
+         
+        
+        </td>  
+      </tr>
+      <tr>
+        <th>Message:</th>
+        <td>
+        <!--  Here goes the input field for the message  -->
+        <h:inputTextarea id="messagetext" value="#{feedbackBackingBean.newFeedback.msg}"></h:inputTextarea>
+          
+         
+         
+         
+        
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2" style="text-align: right;">
+        <!--  Here goes the buttons  -->
+         <h:commandButton value="Send" action="#{feedbackBackingBean.addFeedback()}"></h:commandButton>
+         <h:commandButton value="Clear">
+         <f:ajax render="formulario"></f:ajax>
+         </h:commandButton>
+         
+         
+         
+         
+         
+         
+         
+        </td>
+      </tr>      
+    </table>
+  </h:form>  
+
+</h:body>
+</html>
